@@ -2,7 +2,7 @@ FROM alpine:latest
 
 # Gcloud version https://github.com/google-cloud-sdk/google-cloud-sdk/releases
 
-ENV CLOUD_SDK_VERSION 202.0.0
+ENV CLOUD_SDK_VERSION 210.0.0
 ENV PATH /google-cloud-sdk/bin:$PATH
 
 RUN apk --no-cache update && \
