@@ -1,6 +1,6 @@
 # gcloudcli
 
-[Latest Version](https://github.com/google-cloud-sdk/google-cloud-sdk/releases0)
+[Latest Version](https://github.com/google-cloud-sdk/google-cloud-sdk/releases)
 
 Alias
 

@@ -1,8 +1,11 @@
 FROM alpine:latest
 
-# Gcloud version https://github.com/google-cloud-sdk/google-cloud-sdk/releases
+RUN deluser guest ; delgroup users
+RUN addgroup -g 985 -S users
+RUN adduser -S -G users -u 1000 -s /bin/sh -h /home/mudrii mudrii
 
-ENV CLOUD_SDK_VERSION 210.0.0
+# Gcloud version https://github.com/google-cloud-sdk/google-cloud-sdk/releases
+ENV CLOUD_SDK_VERSION 215.0.0
 ENV PATH /google-cloud-sdk/bin:$PATH
 
 RUN apk --no-cache update && \
@@ -22,3 +25,5 @@ RUN apk --no-cache update && \
     gcloud config set metrics/environment github_docker_image && \
     apk --purge del curl && \
     rm /var/cache/apk/*
+
+USER mudrii
